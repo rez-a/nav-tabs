@@ -54,6 +54,7 @@ a {
     position: relative;
     right: -20px;
     opacity: 0;
+    transition: all 0.5s;
 }
 
 .nav-item.selected {
@@ -67,8 +68,25 @@ a {
 
 .tab-item {
     display: none;
+    position: relative;
+    top: -50px;
+    opacity: 0;
+    transition: all 0.5s;
 }
 
 .tab-item.selected {
     display: flex;
+    animation-name: fade;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes fade {
+    from {
+        top: 150;
+    }
+    to {
+        top: 0;
+        opacity: 1;
+    }
 }
